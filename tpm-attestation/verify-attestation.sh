@@ -14,7 +14,6 @@ fi
 
 echo "JESSI Resource Pack API Attestation"
 
-# Build public key from AIK JSON
 python3 -c "
 import base64, sys, json
 from cryptography.hazmat.primitives import serialization

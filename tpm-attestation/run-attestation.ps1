@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 $OutDir = Join-Path $env:USERPROFILE "jessi-attestation"
 $KeyName = 'JessiRelayAttestationKey'
 
-# These values are different on the windows machine that actually runs the verification
+# these values are different on the windows machine that actually runs the verification
 $RelayUser = '[REDACTED]'
 $RelayHost = '[REDACTED]'
 $RelayPath = '~/jessi/resourcepacks'
@@ -47,7 +47,6 @@ $doc = @{
 
 $docJson = $doc | ConvertTo-Json -Depth 4
 $docBytes = [System.Text.Encoding]::UTF8.GetBytes($docJson)
-# Save the exact bytes that were signed so the verifier can use them
 $signedBodyPath = Join-Path $OutDir "signed-body.bin"
 [IO.File]::WriteAllBytes($signedBodyPath, $docBytes)
 
