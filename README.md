@@ -18,3 +18,10 @@ technically I could if I were so inclined, but the api is set up in a way that m
 
 that being said, all uploaded files only persist while the JESSI server is actually online, and the files are encrypted. this means that I cant just go log into my webserver with sftp and download the files whenever I want. if I wanted to get the data, I would have to go and look at the apache logs, download your resource packs blob.bin, then decrypt it with the key. would I ever actually do this? FUCK NO. it would be morally wrong for me to do so, and I literally gain nothing from doing it. my word probably means nothing to you though, so if you dont want to use this service because I, baconmania, could in theory look at your resource pack, then so be it. no skin off my ass
 ## if you can think of any way to make this more secure, please reach out to me and let me know or make a pull request!
+
+# how do I know that the code in this repo is actually the code running on your webserver?
+
+I set up a lil tpm attestation thing that runs every 10 minutes on an old windows machine I have. you can verify the hashes of the hosted code at https://baconium.dev/jessi/resourcepacks/attestation.json and you can review my (dogshit vibecoded) attestation scripts under the tpm-attestation folder in this repo
+
+# I still don't trust you, and I hate you!!!!!!!!
+ shut up fil
