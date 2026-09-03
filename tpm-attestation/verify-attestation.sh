@@ -29,7 +29,7 @@ with open('/tmp/aik-pub.pem', 'wb') as f: f.write(spki)
 echo "AIK public key loaded: $(grep -c BEGIN /tmp/aik-pub.pem) lines"
 
 if [ ! -f "$SIG" ]; then
-    echo "Error: signature file $SIG not found"
+    echo "error: signature file $SIG not found"
     exit 1
 fi
 cat "$SIG" | openssl base64 -d -A > /tmp/sig.bin 2>/dev/null
