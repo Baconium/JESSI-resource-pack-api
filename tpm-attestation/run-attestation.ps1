@@ -47,6 +47,9 @@ $doc = @{
 
 $docJson = $doc | ConvertTo-Json -Depth 4
 $docBytes = [System.Text.Encoding]::UTF8.GetBytes($docJson)
+# Save the exact bytes that were signed so the verifier can use them
+$signedBodyPath = Join-Path $OutDir "signed-body.bin"
+[IO.File]::WriteAllBytes($signedBodyPath, $docBytes)
 
 try {
     $k = [System.Security.Cryptography.CngKey]::Open(
@@ -86,6 +89,14 @@ $cmd = "scp $scpFlags $localFile $remoteDest"
 Set-Content -Path $batFile -Value $cmd -Encoding ASCII
 cmd /c $batFile 2>&1 | Out-Null
 Write-Output "uploaded: https://baconium.dev/jessi/resourcepacks/attestation.json"
+
+Write-Output "uploading signed body bytes..."
+$localBody = Join-Path $OutDir "signed-body.bin"
+$remoteBodyDest = "${RelayUser}@${RelayHost}:${RelayPath}/signed-body.bin"
+$cmd = "scp $scpFlags $localBody $remoteBodyDest"
+Set-Content -Path $batFile -Value $cmd -Encoding ASCII
+cmd /c $batFile 2>&1 | Out-Null
+Write-Output "uploaded: https://baconium.dev/jessi/resourcepacks/signed-body.bin"
 
 $rsa.Dispose()
 $k.Dispose()

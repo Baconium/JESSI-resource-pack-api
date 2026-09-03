@@ -1,3 +1,7 @@
 RewriteEngine On
+
+# ── Session creation (POST body with JSON) ──────────────────────────────
 RewriteRule ^session/?$                          session.php  [L]
+
+# ── Directory listing is never useful for this directory ─────────────────
 Options -Indexes

@@ -1,0 +1,8 @@
+{
+    "algorithm": "RSA",
+    "keySize": 2048,
+    "keyName": "JessiRelayAttestationKey",
+    "modulus": "tp+sUuOJt8w484a+gBSBNoCgkh3cLMZnfH6HcuIyWo2smRwlJmjPv/v6kAvjq4mW9oXePriFRT3fgMXxzMjDQex7XK4qgBPQ+yL3Ao2hjxFlirKQgt4fBVgIM7LbulWyT1W6ct+6iHZACiKequ5RPcEeafeJuNS1WUQDMYRDa4WFVRmEwFQP7w6fDDv97QXbxIw6OBK7e39xjN8lTdQwomNMSixWOAzYDLfnoRlTh/kyJPzoOQD/QKvxi41vJrE/v0YdW/XY+vdAoFDbMbHvt9EB2mbqOWsGYn0Myyic2BP4f9UbhaU6Maw3tXyaa3++Rr6vPwzeaBXOl3Bh7RxJsQ==",
+    "exponent": "AQAB",
+    "provider": "Microsoft Platform Crypto Provider"
+}
